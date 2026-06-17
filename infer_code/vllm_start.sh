@@ -3,7 +3,7 @@ export MKL_THREADING_LAYER=GNU
 export OMP_NUM_THREADS=1
 
 
-CUDA_VISIBLE_DEVICES=$SELECTED_GPUS vllm serve /data/yuguangya/ALLYOUNEED/VL/Qwen2.5-VL-7B-Instruct \
+CUDA_VISIBLE_DEVICES=$SELECTED_GPUS vllm serve /data/ALLYOUNEED/VL/Qwen2.5-VL-7B-Instruct \
     --served-model-name base \
     --max-model-len 40000 \
     -tp 1 \

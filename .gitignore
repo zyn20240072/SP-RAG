@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+*.log
+processing_errors.log
+results/
+checkpoint/
+checkpoints/
+wandb/
+*.jsonl.tmp
+*.sqlite
+*.sqlite3
+chroma/
+chroma_data/

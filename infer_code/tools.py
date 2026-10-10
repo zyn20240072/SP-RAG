@@ -11,11 +11,11 @@ class Toolbox:
             raise ValueError("Dataset name cannot be empty.")
         self.dataset = dataset
         self.top_n = top_n
-        # print(f"[Toolbox] Initialized for dataset '{self.dataset}' with top_n={self.top_n}.")
+        print(f"[Toolbox] Initialized for dataset '{self.dataset}' with top_n={self.top_n}.")
 
     def text_search(self, query: str, top_n: int = None) -> List[Dict[str, Any]]:
         num_results = top_n if top_n is not None else self.top_n
-        # print(f"[Toolbox] text_search executing: query='{query}'")
+        print(f"[Toolbox] text_search executing: query='{query}'")
         
         retrieved_data = top_n_documents_by_queries(
             query_list=[query],
@@ -34,12 +34,12 @@ class Toolbox:
                     "score": doc.get('score', 0.0)
                 }
             })
-        # print(f"[Toolbox] Found {len(assets)} text assets")
+        print(f"[Toolbox] Found {len(assets)} text assets")
         return assets
 
     def image_search(self, query: str, top_n: int = None) -> List[Dict[str, Any]]:
         num_results = top_n if top_n is not None else self.top_n
-        # print(f"[Toolbox] image_search executing: query='{query}'")
+        print(f"[Toolbox] image_search executing: query='{query}'")
         
         retrieved_data = top_n_images_by_text_query(
             query_texts=[query],
@@ -58,5 +58,5 @@ class Toolbox:
                     "score": img.get('score', 0.0)
                 }
             })
-        # print(f"[Toolbox] Found {len(assets)} image assets")
+        print(f"[Toolbox] Found {len(assets)} image assets")
         return assets

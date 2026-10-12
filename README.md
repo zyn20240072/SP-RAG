@@ -10,6 +10,16 @@ In the controlled Qwen2.5-VL-7B comparison reported in our paper, SP-RAG improve
 
 Project page: <https://github.com/zyn20240072/SP-RAG>
 
+## Framework
+
+<p align="center">
+  <a href="final_images/SP-RAG%20v2.drawio.pdf">
+    <img src="final_images/SP-RAG-framework.png" alt="Overview of the SP-RAG framework" width="100%">
+  </a>
+</p>
+
+<p align="center"><em>SP-RAG maintains a persistent evidence state to assess retrieval sufficiency, plan gap-driven retrieval, and produce evidence-aware answers. Click the figure to open the vector PDF.</em></p>
+
 ## Released Models
 
 The trained SP-RAG checkpoints are available on ModelScope:

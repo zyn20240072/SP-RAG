@@ -118,6 +118,58 @@ The dataset names in `infer_code/config.py` are local identifiers. They map to t
 
 SP-RAG does not redistribute these datasets. Download them from their official sources, follow their respective licenses and terms, and cite the corresponding papers when reporting results. The `mutihop` spelling is retained in the code as the internal identifier for MultiModalQA.
 
+### Dataset Citations
+
+When reporting results on these benchmarks, please cite their original papers:
+
+```bibtex
+@inproceedings{ma2024mmlongbenchdoc,
+  title     = {{MMLongBench-Doc}: Benchmarking Long-context Document Understanding with Visualizations},
+  author    = {Ma, Yubo and Zang, Yuhang and Chen, Liangyu and Chen, Meiqi and
+               Jiao, Yizhu and Li, Xinze and Lu, Xinyuan and Liu, Ziyu and
+               Ma, Yan and Dong, Xiaoyi and Zhang, Pan and Pan, Liangming and
+               Jiang, Yu-Gang and Wang, Jiaqi and Cao, Yixin and Sun, Aixin},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {37},
+  pages     = {95963--96010},
+  year      = {2024},
+  doi       = {10.52202/079017-3041}
+}
+
+@inproceedings{talmor2021multimodalqa,
+  title     = {{MultiModalQA}: Complex Question Answering over Text, Tables and Images},
+  author    = {Talmor, Alon and Yoran, Ori and Catav, Amnon and Lahav, Dan and
+               Wang, Yizhong and Asai, Akari and Ilharco, Gabriel and
+               Hajishirzi, Hannaneh and Berant, Jonathan},
+  booktitle = {International Conference on Learning Representations},
+  year      = {2021},
+  url       = {https://openreview.net/forum?id=ee6W5UgQLa}
+}
+
+@inproceedings{wang-etal-2025-vidorag,
+  title     = {{ViDoRAG}: Visual Document Retrieval-Augmented Generation via Dynamic Iterative Reasoning Agents},
+  author    = {Wang, Qiuchen and Ding, Ruixue and Chen, Zehui and Wu, Weiqi and
+               Wang, Shihang and Xie, Pengjun and Zhao, Feng},
+  booktitle = {Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing},
+  pages     = {9113--9134},
+  year      = {2025},
+  doi       = {10.18653/v1/2025.emnlp-main.464},
+  url       = {https://aclanthology.org/2025.emnlp-main.464/}
+}
+
+@article{tanaka2023slidevqa,
+  title   = {{SlideVQA}: A Dataset for Document Visual Question Answering on Multiple Images},
+  author  = {Tanaka, Ryota and Nishida, Kyosuke and Nishida, Kosuke and
+             Hasegawa, Taku and Saito, Itsumi and Saito, Kuniko},
+  journal = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume  = {37},
+  number  = {11},
+  pages   = {13636--13645},
+  year    = {2023},
+  doi     = {10.1609/aaai.v37i11.26598}
+}
+```
+
 ## Environment
 
 Python 3.10 or later is required. The default pipeline uses local GPU services for generation and embedding.
@@ -315,55 +367,3 @@ bash train_code/RL/grpo_vrag_v9_vllm_cog_plan.sh
 The RL launcher uses `plugin_vrag_v18.py` and the registered `agentic_rag_reward`. `plugin_vrag_v18_qwen3_5.py` contains the corresponding Qwen3.5-oriented parsing and reward variant. Check plugin resolution against your ms-swift version and launch directory before starting a long run.
 
 Both launchers wait for GPUs meeting hard-coded free-memory thresholds. Adjust `TARGET_FREE_MEM`, `TARGET_GPU_COUNT`, and `CHECK_INTERVAL` for your cluster.
-
-## Citation
-
-Please cite the original benchmark papers corresponding to the datasets used in your experiments:
-
-```bibtex
-@inproceedings{ma2024mmlongbenchdoc,
-  title     = {{MMLongBench-Doc}: Benchmarking Long-context Document Understanding with Visualizations},
-  author    = {Ma, Yubo and Zang, Yuhang and Chen, Liangyu and Chen, Meiqi and
-               Jiao, Yizhu and Li, Xinze and Lu, Xinyuan and Liu, Ziyu and
-               Ma, Yan and Dong, Xiaoyi and Zhang, Pan and Pan, Liangming and
-               Jiang, Yu-Gang and Wang, Jiaqi and Cao, Yixin and Sun, Aixin},
-  booktitle = {Advances in Neural Information Processing Systems},
-  volume    = {37},
-  pages     = {95963--96010},
-  year      = {2024},
-  doi       = {10.52202/079017-3041}
-}
-
-@inproceedings{talmor2021multimodalqa,
-  title     = {{MultiModalQA}: Complex Question Answering over Text, Tables and Images},
-  author    = {Talmor, Alon and Yoran, Ori and Catav, Amnon and Lahav, Dan and
-               Wang, Yizhong and Asai, Akari and Ilharco, Gabriel and
-               Hajishirzi, Hannaneh and Berant, Jonathan},
-  booktitle = {International Conference on Learning Representations},
-  year      = {2021},
-  url       = {https://openreview.net/forum?id=ee6W5UgQLa}
-}
-
-@inproceedings{wang-etal-2025-vidorag,
-  title     = {{ViDoRAG}: Visual Document Retrieval-Augmented Generation via Dynamic Iterative Reasoning Agents},
-  author    = {Wang, Qiuchen and Ding, Ruixue and Chen, Zehui and Wu, Weiqi and
-               Wang, Shihang and Xie, Pengjun and Zhao, Feng},
-  booktitle = {Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing},
-  pages     = {9113--9134},
-  year      = {2025},
-  doi       = {10.18653/v1/2025.emnlp-main.464},
-  url       = {https://aclanthology.org/2025.emnlp-main.464/}
-}
-
-@article{tanaka2023slidevqa,
-  title   = {{SlideVQA}: A Dataset for Document Visual Question Answering on Multiple Images},
-  author  = {Tanaka, Ryota and Nishida, Kyosuke and Nishida, Kosuke and
-             Hasegawa, Taku and Saito, Itsumi and Saito, Kuniko},
-  journal = {Proceedings of the AAAI Conference on Artificial Intelligence},
-  volume  = {37},
-  number  = {11},
-  pages   = {13636--13645},
-  year    = {2023},
-  doi     = {10.1609/aaai.v37i11.26598}
-}
-```
